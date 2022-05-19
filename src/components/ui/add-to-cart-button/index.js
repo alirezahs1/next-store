@@ -14,7 +14,7 @@ const AddToCartButton = ({className='', children, ...rest}) => {
 					px-7 py-4
 					rounded-0 sm:rounded-lg
 					before:content-[""] before:absolute before:inset-y-2 before:-inset-x-1 before:bg-[#ff4166] before:-z-30 before:blur-lg before:translate-y-3 before:opacity-40
-					active:scale-[0.98] transition duration-100
+					sm:active:scale-[0.98] transition duration-100
 
 					fixed sm:relative
 					bottom-0 inset-x-0

@@ -16,14 +16,19 @@ export default function ProdoctDetail({product, id}) {
 				<meta property="og:description" content={product?.description} />
 				<meta name="description" content={product?.description} />
 			</Head>
-			<div className="bg-gray-300 w-full lg:w-[420px] 2xl:w-3/12 p-12 bg-gradient-to-b from-[#6afec8] to-[#43c8cb] flex flex-col justify-center">
+			<div className="relative bg-gray-300 w-full max-h-80 min-h-[450px] sm:max-h-96 lg:max-h-full lg:w-[420px] 2xl:w-3/12 p-8 pb-16 lg:p-12 lg:pb-24 bg-gradient-to-b from-[#6afec8] to-[#43c8cb] flex flex-col justify-center">
 				<Image className="mix-blend-multiply" src={product?.image} alt={product?.title} width={400} height={400} objectFit="scale-down" />
+				<div className="flex space-x-2 absolute bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2">
+					{Array.from({length: 4}).map((_, i) => (
+						<span key={i} className={`w-3 h-3 rounded-full ${i===0 ? "bg-white" : "bg-gray-800 opacity-30 cursor-pointer hover:opacity-50 transition-opacity duration-150"}`}></span>
+					))}
+				</div>
 			</div>
-			<div className="flex-1 px-12 py-16 flex flex-col justify-between h-full overflow-auto">
+			<div className="flex-1 px-8 sm:px-12 py-10 sm:py-16 flex flex-col justify-between h-full overflow-auto relative">
 				<header>
 					<div className="flex flex-col-reverse lg:flex-row justify-between lg:items-center mb-3">
 						<h1 className="uppercase text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-700">{product?.title}</h1>
-						<RatingStars className="mb-10 lg:mb-0 lg:ml-10" rating={product?.rating?.rate || 0} />
+						<RatingStars className="mb-5 lg:mb-0 lg:ml-10" rating={product?.rating?.rate || 0} />
 					</div>
 					<div className="uppercase italic text-gray-300 font-semibold mb-2">
 						{product?.category}
@@ -39,8 +44,8 @@ export default function ProdoctDetail({product, id}) {
 						{product?.description}
 					</p>
 				</section>
-				<section>
-					<div className="flex flex-col sm:flex-row mb-10">
+				<footer>
+					<div className="flex flex-col sm:flex-row mb-16">
 						<div className="flex-[2] sm:pr-10 sm:border-r-2 mb-10 sm:mb-0">
 							<span className="inline-block mb-4 text-gray-700 font-semibold">
 								COLOR
@@ -98,10 +103,13 @@ export default function ProdoctDetail({product, id}) {
 							]} placeholder="Select QTY" defaultValue={1} />
 						</div>
 					</div>
-				</section>
-				<footer>
-					<div>
+					<div className="flex items-center justify-between">
 						<AddToCartButton />
+						<div className="text-gray-400 pr-4 hover:text-gray-500 transition-colors duration-150 absolute top-8 right-4 sm:static">
+							<svg xmlns="http://www.w3.org/2000/svg" className="cursor-pointer w-6 sm:w-9" viewBox="0 0 20 20" fill="currentColor">
+								<path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+							</svg>
+						</div>
 					</div>
 				</footer>
 			</div>
