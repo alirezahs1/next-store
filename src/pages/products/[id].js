@@ -17,7 +17,7 @@ export default function ProdoctDetail({product, id}) {
 				<meta name="description" content={product?.description} />
 			</Head>
 			<div className="relative bg-gray-300 w-full max-h-80 min-h-[450px] sm:max-h-96 lg:max-h-full lg:w-[420px] 2xl:w-3/12 p-8 pb-16 lg:p-12 lg:pb-24 bg-gradient-to-b from-[#6afec8] to-[#43c8cb] flex flex-col justify-center">
-				<Image className="mix-blend-multiply" src={product?.image} alt={product?.title} width={400} height={400} objectFit="scale-down" />
+				{product?.image && <Image className="mix-blend-multiply" src={product.image} alt={product?.title} width={400} height={400} objectFit="scale-down" />}
 				<div className="flex space-x-2 absolute bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2">
 					{Array.from({length: 4}).map((_, i) => (
 						<span key={i} className={`w-3 h-3 rounded-full ${i===0 ? "bg-white" : "bg-gray-800 opacity-30 cursor-pointer hover:opacity-50 transition-opacity duration-150"}`}></span>
