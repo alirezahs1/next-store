@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ![Screenshot](https://raw.githubusercontent.com/alirezahs1/next-store/main/screenshot.png)
 
 ## Intro
-This is a simple `next.js` project including simple product details page. The project run is running on port `3008` as modified in `package.json` file. I used `tailwind` for styling.
+This is a simple `next.js` project including simple product details page. The project is running on port `3008` as modified in `package.json` file. I used `tailwind` for styling.
 
 ## Getting Started
 
